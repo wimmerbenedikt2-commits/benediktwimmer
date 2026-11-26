@@ -66,19 +66,27 @@
       color: #edf4ff;
     }
     .chips {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 8px;
-      justify-content: center;
       margin: 22px 0;
     }
     .chip {
+      grid-column: span 2;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 7px 11px;
+      padding: 7px 8px;
       color: #e9f1fb;
       font-size: 13px;
+      line-height: 1.4;
       background: rgba(255,255,255,.08);
+    }
+    .chip:nth-child(n + 4) {
+      grid-column: span 3;
     }
     .links { display: grid; gap: 11px; margin-top: 18px; }
     a.button {
