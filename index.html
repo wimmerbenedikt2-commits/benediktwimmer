@@ -68,7 +68,7 @@
     .chips {
       display: grid;
       grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 8px;
+      gap: 6px;
       margin: 22px 0;
     }
     .chip {
@@ -79,10 +79,11 @@
       justify-content: center;
       border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 7px 8px;
+      padding: 6px 3px;
       color: #e9f1fb;
-      font-size: 13px;
+      font-size: clamp(9px, 3vw, 12px);
       line-height: 1.4;
+      white-space: nowrap;
       background: rgba(255,255,255,.08);
     }
     .chip:nth-child(n + 4) {
