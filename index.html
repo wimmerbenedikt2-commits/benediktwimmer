@@ -66,29 +66,33 @@
       color: #edf4ff;
     }
     .chips {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       gap: 6px;
       margin: 22px 0;
     }
-    .chip {
-      grid-column: span 2;
-      min-width: 0;
+    .chip-row {
       display: flex;
+      justify-content: center;
+      gap: 6px;
+      max-width: 100%;
+    }
+    .chip {
+      flex: 0 0 auto;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 4px 3px;
+      padding: 3px clamp(.125rem, calc(10vw - 30px), .4375rem);
       color: #e9f1fb;
-      font-size: clamp(9px, 2.6vw, 11px);
-      line-height: 1.4;
+      font-family: inherit;
+      font-size: clamp(.625rem, 2.8vw, .75rem);
+      font-weight: 400;
+      line-height: 1.35;
       white-space: nowrap;
       background: rgba(255,255,255,.08);
-    }
-    .chip:nth-child(n + 4) {
-      grid-column: span 3;
-      font-size: clamp(8px, 2.4vw, 10px);
     }
     .links { display: grid; gap: 11px; margin-top: 18px; }
     a.button {
@@ -139,11 +143,15 @@
       </p>
 
       <div class="chips">
-        <div class="chip">Strategy</div>
-        <div class="chip">Public Policy</div>
-        <div class="chip">AI &amp; Work</div>
-        <div class="chip">Demographic Change</div>
-        <div class="chip">Organizational Studies</div>
+        <div class="chip-row">
+          <div class="chip">Strategy</div>
+          <div class="chip">Public Policy</div>
+          <div class="chip">AI &amp; Work</div>
+        </div>
+        <div class="chip-row">
+          <div class="chip">Demographic Change</div>
+          <div class="chip">Organizational Studies</div>
+        </div>
       </div>
     </section>
 
